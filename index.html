@@ -1,34 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JMARA - Bulk Haulage & Plant Hire</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JMARA | Earthmoving Specialists</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <img src="assets/logo/jmara-logo.jpg" alt="JMARA Logo" class="logo" />
+    <img src="assets/logo/jmara-logo.jpg" class="logo" alt="JMARA Logo"/>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
       <a href="fleet.html">Fleet</a>
-      <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <section class="hero">
+    <img src="assets/images/hero/hero1.jpg" alt="Earthmoving Action"/>
+    <div class="hero-text">
+      <h1>Heavy Machinery. Real Capability.</h1>
+      <p>Excavators, Trucks, Dozers, Graders — all ready for work.</p>
+    </div>
+  </section>
+
   <main>
-    <section class="hero">
-      <h1>Connecting Land, People & Machinery</h1>
-      <p>Bulk Haulage • Plant Hire • Material Disposal</p>
-      <a href="contact.html" class="cta">Get a Quote</a>
+    <section class="gallery">
+      <h2>Our Equipment in Action</h2>
+      <div class="grid">
+        <!-- Fleet images -->
+        {}
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 JMARA | Respecting Country and Community</p>
+    <p>© 2025 JMARA. Operating on Country with Respect.</p>
   </footer>
+
+  <script>
+    document.querySelectorAll('.grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        const popup = document.createElement('div');
+        popup.className = 'popup';
+        popup.innerHTML = `<img src="${img.src}" /><span>×</span>`;
+        document.body.appendChild(popup);
+        popup.querySelector('span').onclick = () => popup.remove();
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f0e6;
+  color: #333;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f1b12;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 60px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #fff0d6;
+  text-decoration: none;
+}
+
+.hero {
+  background: url('assets/images/aboriginal-pattern.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #742f1f;
+}
+
+.cta {
+  display: inline-block;
+  background: #f9a825;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #2f1b12;
+  color: #fff0d6;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}

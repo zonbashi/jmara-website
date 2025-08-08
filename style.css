@@ -36,6 +36,14 @@ nav a {
   object-fit: cover;
 }
 
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('assets/backgrounds/dot-pattern.jpg') repeat center center;
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+}
+
 .hero-text {
   position: absolute;
   bottom: 30px;
@@ -63,7 +71,7 @@ nav a {
 }
 
 .tile {
-  background: #742f1f;
+  background: #752c1d;
   color: #fff;
   text-align: center;
   padding: 40px 20px;
@@ -72,7 +80,19 @@ nav a {
 
 .tile:hover {
   transform: translateY(-5px);
-  background: #8b3b22;
+  background: #933624;
+}
+
+.divider-pattern {
+  height: 20px;
+  background: url('assets/backgrounds/dot-pattern.jpg') repeat-x center;
+  opacity: 0.6;
+}
+
+.footer-pattern {
+  height: 50px;
+  background: url('assets/backgrounds/dot-pattern.jpg') repeat-x bottom;
+  opacity: 0.6;
 }
 
 footer {

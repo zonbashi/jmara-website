@@ -1,1 +1,70 @@
-<h1>Contact Page Coming Soon</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | JMARA</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+  <img src="assets/logo/jmara-logo.jpg" class="logo" alt="JMARA Logo"/>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="fleet.html">Fleet</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  </header>
+
+  <section class="page-hero">
+    <h1>Contact & Bookings</h1>
+    <p>We respond quickly with availability and rates.</p>
+  </section>
+
+  <section class="contact-details">
+    <div class="contact-card">
+      <h3>JMARA Plant Hire and Supply Solutions Pty Ltd</h3>
+      <p><strong>ABN:</strong> 57 688 058 237 &nbsp; <strong>ACN:</strong> 688 058 237</p>
+      <p><strong>Address:</strong> 65 Southern Plains Road, Wildwood, VIC 3429</p>
+      <p><strong>Phone:</strong> 0405 226 649 &nbsp; <strong>Email:</strong> <a href="mailto:info@jmara.com.au">info@jmara.com.au</a></p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Key Contacts</h3>
+      <ul>
+        <li><strong>Brad Allender</strong> — Director & Secretary<br>M: 0418 310 178 · E: <a href="mailto:brad@jmara.com.au">brad@jmara.com.au</a></li>
+        <li><strong>Ross Morris</strong> — General Manager<br>M: 0433 484 488 · E: <a href="mailto:ross@jmara.com.au">ross@jmara.com.au</a></li>
+        <li><strong>Alice Lorraine Forsyth</strong> — Executive Director, Indigenous Representative<br>M: 0407 312 201 · E: <a href="mailto:info@jmara.com.au">info@jmara.com.au</a></li>
+        <li><strong>Ayshe Onbashi</strong> — Administration Manager<br>M: 0405 226 649 · E: <a href="mailto:ayshe@jmara.com.au">ayshe@jmara.com.au</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="form-wrap">
+    <form name="enquiry" method="post" action="#" onsubmit="alert('Thanks — we\'ll be in touch!'); return false;">
+      <label>Full Name<input type="text" name="name" required></label>
+      <label>Email<input type="email" name="email" required></label>
+      <label>Phone<input type="tel" name="phone" required></label>
+      <label>Service
+        <select name="service">
+          <option>Plant Hire</option>
+          <option>Bulk Haulage</option>
+          <option>Material Disposal</option>
+          <option>Site Services</option>
+        </select>
+      </label>
+      <label>Message<textarea name="message" rows="5" placeholder="Scope, dates, site location"></textarea></label>
+      <button type="submit" class="btn">Send Enquiry</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-pattern"></div>
+    <p>© 2025 JMARA Plant Hire and Supply Solutions — Operating with respect on Country</p>
+  </footer>
+  <a href="contact.html" class="sticky-enquire">Enquire Now</a>
+</body>
+</html>

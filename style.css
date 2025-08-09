@@ -219,6 +219,51 @@ footer{
   header{padding:14px 18px}
 }
 
+/* Mobile responsiveness */
+@media (max-width:600px){
+  /* Allow the header to wrap so logo and nav stack neatly on very narrow screens */
+  header{
+    flex-wrap:wrap;
+    padding:12px 16px;
+  }
+  /* Reduce nav spacing and font size on small screens */
+  nav a{
+    margin:0 8px;
+    font-size:0.85rem;
+  }
+  /* Shorter hero on mobile and smaller overlay text */
+  .hero-video{height:50vh;}
+  .hero-text{
+    left:16px;
+    bottom:16px;
+    padding:16px 20px;
+    font-size:0.95rem;
+  }
+  /* Stack intro cards vertically and reduce padding */
+  .home-intro{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:20px 16px;
+  }
+  .intro-card h2{font-size:1.25rem;}
+  .intro-card p{font-size:0.95rem;}
+  /* Adjust gallery grids for small widths */
+  .grid{
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  }
+  .grid img{
+    height:180px;
+  }
+  .gallery-grid{
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  }
+  .gallery-grid img{
+    height:200px;
+  }
+  /* Center align call-to-action button */
+  .center{margin-top:14px;text-align:center;}
+}
+
 /* Fleet page gallery layout */
 .gallery-grid{
   display:grid;

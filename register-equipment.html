@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Equipment | JMARA</title>
+  <!-- Use the shared stylesheet for consistent branding and layout -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Site header with logo and primary navigation -->
+  <header>
+    <img src="assets/logo/jmara-logo.png" class="logo" alt="JMARA Logo"/>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero section introducing the registration page -->
+  <section class="page-hero">
+    <h1>Register Your Equipment</h1>
+    <p>Submit your equipment details and availability. We’ll connect you with projects that need your machinery.</p>
+  </section>
+
+  <!-- Form section replicating the structure of Southern Plant Hire’s “Fill Wanted” form.  -->
+  <section class="form-wrap">
+    <!-- Note: This form is static and does not submit to a back‑end. In production you would use a
+         serverless form handler or custom API endpoint to process submissions. -->
+    <form name="register-equipment" method="post" action="#">
+      <!-- Company and contact details -->
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" name="companyName" placeholder="Company Name" />
+
+      <label for="contactName">Contact Name<span style="color:var(--ochre);">*</span></label>
+      <input type="text" id="contactName" name="contactName" placeholder="Required" required />
+
+      <label for="phone">Phone Contact No.<span style="color:var(--ochre);">*</span></label>
+      <input type="tel" id="phone" name="phone" placeholder="Required" required />
+
+      <label for="email">Email<span style="color:var(--ochre);">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Required" required />
+
+      <!-- Project and site details -->
+      <label for="projectName">Project Name</label>
+      <input type="text" id="projectName" name="projectName" placeholder="Project Name" />
+
+      <label for="siteAddress">Site Address<span style="color:var(--ochre);">*</span></label>
+      <input type="text" id="siteAddress" name="siteAddress" placeholder="Required" required />
+
+      <label for="suburb">Suburb<span style="color:var(--ochre);">*</span></label>
+      <input type="text" id="suburb" name="suburb" placeholder="Required" required />
+
+      <label for="state">State</label>
+      <input type="text" id="state" name="state" placeholder="State" />
+
+      <label for="melway">Melway reference</label>
+      <input type="text" id="melway" name="melway" placeholder="Melway ref." />
+
+      <!-- Material wanted: multiple choice options -->
+      <label>Material Wanted<span style="color:var(--ochre);">*</span></label>
+      <div style="margin-bottom:12px;">
+        <label><input type="checkbox" name="material[]" value="Clean Fill"/> Clean Fill</label><br/>
+        <label><input type="checkbox" name="material[]" value="Top Soil"/> Top Soil</label><br/>
+        <label><input type="checkbox" name="material[]" value="Sorted Fill"/> Sorted Fill</label><br/>
+        <label><input type="checkbox" name="material[]" value="Structural Fill"/> Structural Fill</label><br/>
+        <label><input type="checkbox" name="material[]" value="Mudstone"/> Mudstone</label><br/>
+        <label><input type="checkbox" name="material[]" value="Other"/> Other</label>
+      </div>
+
+      <!-- Other material description -->
+      <label for="otherMaterial">Other (please specify)</label>
+      <input type="text" id="otherMaterial" name="otherMaterial" placeholder="Describe other material" />
+
+      <!-- Quantity and units -->
+      <label for="quantity">Approx Quantity<span style="color:var(--ochre);">*</span></label>
+      <input type="number" step="any" id="quantity" name="quantity" placeholder="Required" required />
+
+      <label for="units">Units<span style="color:var(--ochre);">*</span></label>
+      <select id="units" name="units" required>
+        <option value="" disabled selected>Select unit</option>
+        <option value="tonnes">Tonnes</option>
+        <option value="cubic metres">Cubic Metres</option>
+      </select>
+
+      <!-- Additional notes -->
+      <label for="additionalInfo">Additional Information</label>
+      <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Date required, specifications, access information, etc."></textarea>
+
+      <!-- File upload -->
+      <label for="upload">Upload File</label>
+      <input type="file" id="upload" name="upload" />
+
+      <!-- Comments -->
+      <label for="comments">Comments</label>
+      <textarea id="comments" name="comments" rows="3" placeholder="Comments"></textarea>
+
+      <!-- Captcha notice: In a real deployment this would be replaced by a captcha widget. -->
+      <p style="font-size:0.9rem;color:#777;">Captcha* (for human verification). Do not fill this field!</p>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <!-- Site footer -->
+  <footer>
+    <div class="footer-pattern"></div>
+    <p>© 2025 JMARA Plant Hire and Supply Solutions — Operating with respect on Country</p>
+  </footer>
+  <a href="contact.html" class="sticky-enquire">Enquire Now</a>
+</body>
+</html>

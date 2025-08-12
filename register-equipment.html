@@ -61,31 +61,13 @@
       <label for="melway">Melway reference</label>
       <input type="text" id="melway" name="melway" placeholder="Melway ref." />
 
-      <!-- Material wanted: multiple choice options -->
-      <label>Material Wanted<span style="color:var(--ochre);">*</span></label>
-      <div style="margin-bottom:12px;">
-        <label><input type="checkbox" name="material[]" value="Clean Fill"/> Clean Fill</label><br/>
-        <label><input type="checkbox" name="material[]" value="Top Soil"/> Top Soil</label><br/>
-        <label><input type="checkbox" name="material[]" value="Sorted Fill"/> Sorted Fill</label><br/>
-        <label><input type="checkbox" name="material[]" value="Structural Fill"/> Structural Fill</label><br/>
-        <label><input type="checkbox" name="material[]" value="Mudstone"/> Mudstone</label><br/>
-        <label><input type="checkbox" name="material[]" value="Other"/> Other</label>
-      </div>
+      <!-- List of machinery to register instead of material wanted -->
+      <label for="machineryList">List of Machinery to Register<span style="color:var(--ochre);">*</span></label>
+      <textarea id="machineryList" name="machineryList" rows="4" placeholder="List each machine (e.g. Excavator, Loader, Water truck) separated by commas or new lines" required></textarea>
 
-      <!-- Other material description -->
-      <label for="otherMaterial">Other (please specify)</label>
-      <input type="text" id="otherMaterial" name="otherMaterial" placeholder="Describe other material" />
-
-      <!-- Quantity and units -->
-      <label for="quantity">Approx Quantity<span style="color:var(--ochre);">*</span></label>
-      <input type="number" step="any" id="quantity" name="quantity" placeholder="Required" required />
-
-      <label for="units">Units<span style="color:var(--ochre);">*</span></label>
-      <select id="units" name="units" required>
-        <option value="" disabled selected>Select unit</option>
-        <option value="tonnes">Tonnes</option>
-        <option value="cubic metres">Cubic Metres</option>
-      </select>
+      <!-- Number of machines -->
+      <label for="quantity">Number of Machines<span style="color:var(--ochre);">*</span></label>
+      <input type="number" step="1" min="1" id="quantity" name="quantity" placeholder="Number of machines" required />
 
       <!-- Additional notes -->
       <label for="additionalInfo">Additional Information</label>

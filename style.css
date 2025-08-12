@@ -1,279 +1,297 @@
 /* JMARA Plant Hire and Supply Solutions – updated styles
-   Consolidated and cleaned up, added consistent mobile nav behaviour across all pages. */
+   This file consolidates and cleans up the previous CSS rules.
+   It removes duplicate definitions, ensures the fleet gallery
+   displays as a proper grid with consistent image sizing, and
+   styles list-based navigation menus to behave like the single
+   link navigation on the home page. */
 
-:root {
-  --ochre: #752c1d;
-  --ochre-2: #8f3a25;
-  --charcoal: #2f1b12;
-  --sand: #f5f0e6;
-  --cream: #fff0d6;
-  --accent: #f9a825;
+:root{
+  --ochre:#752c1d;
+  --ochre-2:#8f3a25;
+  --charcoal:#2f1b12;
+  --sand:#f5f0e6;
+  --cream:#fff0d6;
+  --accent:#f9a825;
 }
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--sand);
-  color: #2a2a2a;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--sand);
+  color:#2a2a2a;
 }
-header {
-  background: var(--charcoal);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 28px;
+header{
+  background:var(--charcoal);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 28px;
 }
-.logo {
-  height: 110px;
-  max-height: 110px;
-  display: block;
+.logo{
+  height:110px;
+  max-height:110px;
+  display:block;
 }
-
-/* Consistent navigation styling for all pages.
-   We use flexbox and wrapping on the nav container so links wrap nicely on small screens.
-   We also remove list bullets and spacing differences between list‑based and anchor‑based nav. */
-header nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
+/* Navigation links on the home page use anchor tags directly. */
+nav a{
+  color:var(--cream);
+  margin:0 12px;
+  text-decoration:none;
+  font-weight:700;
 }
-header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.hero-video{position:relative;height:70vh;overflow:hidden}
+.hero-video video{width:100%;height:100%;object-fit:cover}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:url('assets/backgrounds/dot-pattern.jpg') repeat center;
+  opacity:.22;
+  mix-blend-mode:overlay;
 }
-header nav li {
-  /* spacing handled by nav gap; no additional margin needed here */
+.hero-text{
+  position:absolute;
+  left:30px;
+  bottom:30px;
+  color:#fff;
+  background:rgba(0,0,0,.45);
+  padding:20px 24px;
+  border-radius:8px;
 }
-header nav a,
-header nav li a {
-  display: block;
-  color: var(--cream);
-  text-decoration: none;
-  font-weight: 700;
-  padding: 8px 12px;
+.cta,.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#1c160f;
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:6px;
+  font-weight:800;
 }
-
-/* hero video and overlay */
-.hero-video { position: relative; height: 70vh; overflow: hidden; }
-.hero-video video { width: 100%; height: 100%; object-fit: cover; }
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: url('assets/backgrounds/dot-pattern.jpg') repeat center;
-  opacity: .22;
-  mix-blend-mode: overlay;
+.btn.small{padding:8px 14px;font-weight:700}
+.divider-pattern{
+  height:22px;
+  background:url('assets/backgrounds/dot-pattern.jpg') repeat-x center;
+  opacity:.6;
 }
-.hero-text {
-  position: absolute;
-  left: 30px;
-  bottom: 30px;
-  color: #fff;
-  background: rgba(0,0,0,.45);
-  padding: 20px 24px;
-  border-radius: 8px;
+.home-intro{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+  padding:24px 20px;
 }
-
-/* buttons */
-.cta, .btn {
-  display: inline-block;
-  background: var(--accent);
-  color: #1c160f;
-  text-decoration: none;
-  padding: 12px 22px;
-  border-radius: 6px;
-  font-weight: 800;
-}
-.btn.small {
-  padding: 8px 14px;
-  font-weight: 700;
-}
-
-/* patterns and section styling */
-.divider-pattern {
-  height: 22px;
-  background: url('assets/backgrounds/dot-pattern.jpg') repeat-x center;
-  opacity: .6;
-}
-.home-intro {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  padding: 24px 20px;
-}
-.intro-card {
-  background: #fff;
-  border: 3px solid var(--ochre);
-  border-radius: 10px;
-  padding: 18px 16px;
+.intro-card{
+  background:#fff;
+  border:3px solid var(--ochre);
+  border-radius:10px;
+  padding:18px 16px;
 }
 .home-gallery,
-.gallery {
-  padding: 40px 20px;
+.gallery{
+  padding:40px 20px;
 }
-.home-gallery h2 {
-  text-align: center;
-  margin: 0 0 20px;
+.home-gallery h2{
+  text-align:center;
+  margin:0 0 20px;
 }
-
 /* Home gallery grid for equipment previews */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px;
 }
-.grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border: 4px solid var(--ochre);
-  background: #000;
+.grid img{
+  /* Home gallery images: give each tile a fixed height and crop
+     to maintain uniform sizing across the grid. */
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border:4px solid var(--ochre);
+  background:#000;
 }
-.center { text-align: center; margin-top: 18px; }
+.center{text-align:center;margin-top:18px}
+.page-hero{
+  padding:40px 20px;
+  background:#fff;
+  border-top:6px solid var(--ochre);
+  border-bottom:6px solid var(--ochre);
+}
+.filters{padding:10px 20px}
+.chip{
+  background:#fff;
+  border:2px solid var(--ochre);
+  color:var(--ochre);
+  padding:8px 12px;
+  border-radius:20px;
+  margin:6px;
+  cursor:pointer;
+}
+.cards{
+  padding:30px 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+.card{
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+  overflow:hidden;
+  border:3px solid var(--ochre);
+}
+.card img{width:100%;display:block}
+.card-body{padding:16px}
+.form-wrap{padding:30px 20px}
+form{
+  max-width:720px;
+  margin:0 auto;
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  border:3px solid var(--ochre);
+}
+label{display:block;margin-bottom:12px;color:#333}
+input,select,textarea{
+  width:100%;
+  padding:10px;
+  border:2px solid var(--charcoal);
+  border-radius:6px;
+  margin-top:6px;
+}
+button.btn{cursor:pointer}
+.tiles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  padding:40px 20px;
+}
+.tile{
+  background:var(--ochre);
+  color:#fff;
+  text-align:center;
+  padding:44px 22px;
+  border-radius:10px;
+  transition:.25s;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+.tile:hover{
+  transform:translateY(-6px);
+  background:var(--ochre-2);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+.contact-details{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px;
+  padding:20px;
+}
+.contact-card{
+  background:#fff;
+  border:3px solid var(--ochre);
+  border-radius:10px;
+  padding:16px;
+}
+.footer-pattern{
+  height:58px;
+  background:url('assets/backgrounds/dot-pattern.jpg') repeat-x bottom;
+  opacity:.6;
+}
+footer{
+  background:var(--charcoal);
+  color:var(--cream);
+  text-align:center;
+  padding:22px;
+  font-size:.95em;
+}
+.sticky-enquire{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:var(--accent);
+  color:#1c160f;
+  font-weight:800;
+  padding:12px 18px;
+  text-decoration:none;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+  z-index:1000;
+}
+@media (max-width:768px){
+  .logo{max-height:80px;height:80px}
+  header{padding:14px 18px}
+}
 
-.page-hero {
-  padding: 40px 20px;
-  background: #fff;
-  border-top: 6px solid var(--ochre);
-  border-bottom: 6px solid var(--ochre);
-}
-
-.filters { padding: 10px 20px; }
-.chip {
-  background: #fff;
-  border: 2px solid var(--ochre);
-  color: var(--ochre);
-  padding: 8px 12px;
-  border-radius: 20px;
-  margin: 6px;
-  cursor: pointer;
-}
-.cards {
-  padding: 30px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
-}
-.card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.15);
-  overflow: hidden;
-  border: 3px solid var(--ochre);
-}
-.card img { width: 100%; display: block; }
-.card-body { padding: 16px; }
-
-.form-wrap { padding: 30px 20px; }
-form {
-  max-width: 720px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  border: 3px solid var(--ochre);
-}
-label { display: block; margin-bottom: 12px; color: #333; }
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid var(--charcoal);
-  border-radius: 6px;
-  margin-top: 6px;
-}
-button.btn { cursor: pointer; }
-
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  padding: 40px 20px;
-}
-.tile {
-  background: var(--ochre);
-  color: #fff;
-  text-align: center;
-  padding: 44px 22px;
-  border-radius: 10px;
-  transition: .25s;
-  box-shadow: 0 6px 18px rgba(0,0,0,.18);
-}
-.tile:hover {
-  transform: translateY(-6px);
-  background: var(--ochre-2);
-  box-shadow: 0 10px 24px rgba(0,0,0,.22);
-}
-
-.contact-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-  padding: 20px;
-}
-.contact-card {
-  background: #fff;
-  border: 3px solid var(--ochre);
-  border-radius: 10px;
-  padding: 16px;
-}
-
-.footer-pattern {
-  height: 58px;
-  background: url('assets/backgrounds/dot-pattern.jpg') repeat-x bottom;
-  opacity: .6;
-}
-footer {
-  background: var(--charcoal);
-  color: var(--cream);
-  text-align: center;
-  padding: 22px;
-  font-size: .95em;
-}
-.sticky-enquire {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--accent);
-  color: #1c160f;
-  font-weight: 800;
-  padding: 12px 18px;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.25);
-  z-index: 1000;
-}
-
-/* Media queries for smaller screens */
-@media (max-width: 768px) {
-  .logo {
-    max-height: 80px;
-    height: 80px;
+/* Mobile responsiveness */
+@media (max-width:600px){
+  /* Allow the header to wrap so logo and nav stack neatly on very narrow screens */
+  header{
+    flex-wrap:wrap;
+    padding:12px 16px;
   }
-  header {
-    padding: 14px 18px;
+  /* Reduce nav spacing and font size on small screens */
+  nav a{
+    margin:0 8px;
+    font-size:0.85rem;
   }
+  /* Shorter hero on mobile and smaller overlay text */
+  .hero-video{height:50vh;}
+  .hero-text{
+    left:16px;
+    bottom:16px;
+    padding:16px 20px;
+    font-size:0.95rem;
+  }
+  /* Stack intro cards vertically and reduce padding */
+  .home-intro{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:20px 16px;
+  }
+  .intro-card h2{font-size:1.25rem;}
+  .intro-card p{font-size:0.95rem;}
+  /* Adjust gallery grids for small widths */
+  .grid{
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  }
+  .grid img{
+    height:180px;
+  }
+  .gallery-grid{
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  }
+  .gallery-grid img{
+    height:200px;
+  }
+  /* Center align call-to-action button */
+  .center{margin-top:14px;text-align:center;}
 }
 
 /* Fleet page gallery layout */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
 }
 
 /* Uniform gallery tile sizing for home and fleet */
 .gallery-grid img,
-.gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  border: 4px solid var(--ochre);
-  background: #000;
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  border:4px solid var(--ochre);
+  background:#000;
+}
+
+/* Make nav list horizontal and remove bullets in pages that use ul/li for nav */
+header nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+}
+header nav li{margin-right:12px;}
+
+/* Add spacing between adjacent buttons within a center wrapper */
+.center .btn + .btn{
+  margin-left:12px;
 }
